@@ -92,7 +92,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Case() {
 	    _classCallCheck(this, Case);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Case).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (Case.__proto__ || Object.getPrototypeOf(Case)).apply(this, arguments));
 	  }
 
 	  _createClass(Case, [{
@@ -121,7 +121,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Page() {
 	    _classCallCheck(this, Page);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Page).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).apply(this, arguments));
 	  }
 
 	  _createClass(Page, [{
@@ -149,7 +149,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function _UrlSwitch() {
 	    _classCallCheck(this, _UrlSwitch);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(_UrlSwitch).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (_UrlSwitch.__proto__ || Object.getPrototypeOf(_UrlSwitch)).apply(this, arguments));
 	  }
 
 	  _createClass(_UrlSwitch, [{

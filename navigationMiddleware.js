@@ -97,16 +97,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	      route = _step.value;
 	      var _route = route;
 
-	      var _route2 = _slicedToArray(_route, 2);
+	      var _route2 = _slicedToArray(_route, 3);
 
 	      var url = _route2[0];
 	      var handler = _route2[1];
+	      var name = _route2[2];
 
 	      var reg = (0, _pathToRegexp2.default)(url);
 	      var result = reg.exec(path);
 
 	      if (result) {
-	        return { handler: handler, reg: reg, result: result };
+	        return { handler: handler, reg: reg, result: result, name: name };
 	      }
 	    }
 	  } catch (err) {
@@ -124,6 +125,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }
 	}
+
+	var getRouteInfo = function getRouteInfo(routes, shouldSetPage, data) {
+	  var method = data.method;
+	  var pathName = data.pathName;
+
+	  var route = matchRoute(pathName, routes);
+	  var routeInfo = void 0;
+
+	  if (route) {
+	    var name = route.name;
+
+
+	    if (name && shouldSetPage && method === _router.METHODS.GET) {
+	      routeInfo = {
+	        name: name,
+	        startTime: new Date().getTime()
+	      };
+	    }
+	  }
+	  return routeInfo;
+	};
 
 	var findAndCallHandler = function findAndCallHandler(store, routes, shouldSetPage, data) {
 	  var method = data.method;
@@ -170,22 +192,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	exports.default = {
-	  create: function create(routes) {
+	  create: function create(routes, well, onHandlerComplete) {
 	    return function (store) {
 	      return function (next) {
 	        return function (action) {
+	          var shouldSetPage = void 0;
+	          var payload = void 0;
 	          switch (action.type) {
 	            case actions.NAVIGATE_TO_URL:
-	              {
-	                next(action);
-	                return next(findAndCallHandler(store, routes, true, action.payload));
-	              }
 	            case actions.GOTO_PAGE_INDEX:
 	              {
 	                next(action);
-	                return next(findAndCallHandler(store, routes, false, _extends({}, action.payload, {
-	                  method: _router.METHODS.GET
-	                })));
+	                if (action.type === actions.NAVIGATE_TO_URL) {
+	                  shouldSetPage = true;
+	                  payload = action.payload;
+	                } else {
+	                  shouldSetPage = false;
+	                  payload = _extends({}, action.payload, { method: _router.METHODS.GET });
+	                }
+	                var routeInfo = getRouteInfo(routes, shouldSetPage, payload);
+	                var handler = findAndCallHandler(store, routes, shouldSetPage, payload);
+	                var ret = next(handler);
+	                well.onComplete().then(onHandlerComplete(routeInfo));
+	                return ret;
 	              }
 	            default:
 	              return next(action);

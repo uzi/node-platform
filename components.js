@@ -117,7 +117,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _inherits(_Anchor, _React$Component);
 
 	  function _Anchor() {
-	    var _Object$getPrototypeO;
+	    var _ref;
 
 	    var _temp, _this, _ret;
 
@@ -127,7 +127,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      args[_key] = arguments[_key];
 	    }
 
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(_Anchor)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.handleClick = function (e) {
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = _Anchor.__proto__ || Object.getPrototypeOf(_Anchor)).call.apply(_ref, [this].concat(args))), _this), _this.handleClick = function (e) {
 	      if (isNewTabClick(e)) {
 	        return;
 	      }
@@ -192,7 +192,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _inherits(_BackAnchor, _React$Component2);
 
 	  function _BackAnchor() {
-	    var _Object$getPrototypeO2;
+	    var _ref2;
 
 	    var _temp2, _this2, _ret2;
 
@@ -202,7 +202,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      args[_key2] = arguments[_key2];
 	    }
 
-	    return _ret2 = (_temp2 = (_this2 = _possibleConstructorReturn(this, (_Object$getPrototypeO2 = Object.getPrototypeOf(_BackAnchor)).call.apply(_Object$getPrototypeO2, [this].concat(args))), _this2), _this2.handleClick = function (e) {
+	    return _ret2 = (_temp2 = (_this2 = _possibleConstructorReturn(this, (_ref2 = _BackAnchor.__proto__ || Object.getPrototypeOf(_BackAnchor)).call.apply(_ref2, [this].concat(args))), _this2), _this2.handleClick = function (e) {
 	      if (isNewTabClick(e)) {
 	        return;
 	      }
@@ -321,7 +321,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _inherits(_LinkHijacker, _React$Component3);
 
 	  function _LinkHijacker() {
-	    var _Object$getPrototypeO3;
+	    var _ref3;
 
 	    var _temp3, _this3, _ret3;
 
@@ -331,7 +331,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      args[_key3] = arguments[_key3];
 	    }
 
-	    return _ret3 = (_temp3 = (_this3 = _possibleConstructorReturn(this, (_Object$getPrototypeO3 = Object.getPrototypeOf(_LinkHijacker)).call.apply(_Object$getPrototypeO3, [this].concat(args))), _this3), _this3.onClick = function (e) {
+	    return _ret3 = (_temp3 = (_this3 = _possibleConstructorReturn(this, (_ref3 = _LinkHijacker.__proto__ || Object.getPrototypeOf(_LinkHijacker)).call.apply(_ref3, [this].concat(args))), _this3), _this3.onClick = function (e) {
 	      // let the content node's click handler run first and allow it call
 	      // preventDefault if desired.
 	      var child = _this3.props.children;
@@ -475,7 +475,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _inherits(_Form, _React$Component4);
 
 	  function _Form() {
-	    var _Object$getPrototypeO4;
+	    var _ref4;
 
 	    var _temp4, _this4, _ret4;
 
@@ -485,7 +485,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      args[_key4] = arguments[_key4];
 	    }
 
-	    return _ret4 = (_temp4 = (_this4 = _possibleConstructorReturn(this, (_Object$getPrototypeO4 = Object.getPrototypeOf(_Form)).call.apply(_Object$getPrototypeO4, [this].concat(args))), _this4), _this4.handleSubmit = function (e) {
+	    return _ret4 = (_temp4 = (_this4 = _possibleConstructorReturn(this, (_ref4 = _Form.__proto__ || Object.getPrototypeOf(_Form)).call.apply(_ref4, [this].concat(args))), _this4), _this4.handleSubmit = function (e) {
 	      e.preventDefault();
 
 	      var form = e.target;
@@ -548,7 +548,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _inherits(JSForm, _React$Component5);
 
 	  function JSForm() {
-	    var _Object$getPrototypeO5;
+	    var _ref5;
 
 	    var _temp5, _this5, _ret5;
 
@@ -558,7 +558,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      args[_key5] = arguments[_key5];
 	    }
 
-	    return _ret5 = (_temp5 = (_this5 = _possibleConstructorReturn(this, (_Object$getPrototypeO5 = Object.getPrototypeOf(JSForm)).call.apply(_Object$getPrototypeO5, [this].concat(args))), _this5), _this5.handleSubmit = function (e) {
+	    return _ret5 = (_temp5 = (_this5 = _possibleConstructorReturn(this, (_ref5 = JSForm.__proto__ || Object.getPrototypeOf(JSForm)).call.apply(_ref5, [this].concat(args))), _this5), _this5.handleSubmit = function (e) {
 	      e.preventDefault();
 	      var form = e.target;
 	      _this5.props.onSubmit(getValues(form));
@@ -600,7 +600,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function _UrlSync() {
 	    _classCallCheck(this, _UrlSync);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(_UrlSync).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (_UrlSync.__proto__ || Object.getPrototypeOf(_UrlSync)).apply(this, arguments));
 	  }
 
 	  _createClass(_UrlSync, [{

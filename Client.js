@@ -107,11 +107,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var routes = _config$routes === undefined ? [] : _config$routes;
 	  var _config$debug = config.debug;
 	  var debug = _config$debug === undefined ? false : _config$debug;
+	  var _config$onHandlerComp = config.onHandlerComplete;
+	  var onHandlerComplete = _config$onHandlerComp === undefined ? function () {} : _config$onHandlerComp;
 
 
 	  var well = _middleware.PromiseWell.create();
 	  var thunk = _middleware.Thunker.create();
-	  var nav = _navigationMiddleware2.default.create(routes);
+	  var nav = _navigationMiddleware2.default.create(routes, well, onHandlerComplete);
 
 	  var reds = (0, _redux.combineReducers)(_extends({}, reducers, { platform: _reducer2.default }));
 	  var wares = reduxMiddleware.concat([nav, thunk, well.middleware]);
