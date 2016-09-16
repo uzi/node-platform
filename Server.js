@@ -133,6 +133,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    }, _callee3, undefined);
 	  })) : _config$dispatchBefor;
+	  var _config$onHandlerComp = config.onHandlerComplete;
+	  var onHandlerComplete = _config$onHandlerComp === undefined ? function () {} : _config$onHandlerComp;
 
 
 	  var server = new _koa2.default();
@@ -141,14 +143,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  var handleRoute = function () {
 	    var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(ctx, next) {
-	      var nav, well, thunk, r, store, state, currentUrl, currentQuery, newUrl;
+	      var well, thunk, nav, r, store, state, currentUrl, currentQuery, newUrl;
 	      return regeneratorRuntime.wrap(function _callee2$(_context2) {
 	        while (1) {
 	          switch (_context2.prev = _context2.next) {
 	            case 0:
-	              nav = _navigationMiddleware2.default.create(routes);
 	              well = _middleware.PromiseWell.create();
 	              thunk = _middleware.Thunker.create();
+	              nav = _navigationMiddleware2.default.create(routes, well, onHandlerComplete);
 	              r = (0, _redux.combineReducers)(_extends({}, reducers, { platform: _reducer2.default }));
 	              store = (0, _redux.createStore)(r, {}, _redux.applyMiddleware.apply(undefined, _toConsumableArray(reduxMiddleware).concat([nav, thunk, well.middleware])));
 	              _context2.next = 7;
